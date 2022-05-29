@@ -20,11 +20,11 @@ public class Main {
 		Conta contaCorrenteRodrigo = new ContaCorrente(rodrigo);
 
 
-		contaCorrenteVenilton.depositar(5200);
-		poupancaRafael.depositar(1000);
-		contaCorrenteRodrigo.depositar(200);
-		contaCorrenteVenilton.transferir(1200, poupancaRafael);
-		contaCorrenteVenilton.transferir(3000, contaCorrenteRodrigo);
+		contaCorrenteVenilton.depositar(10000);
+		poupancaRafael.depositar(1500000);
+		contaCorrenteRodrigo.depositar(80000);
+//		contaCorrenteVenilton.transferir(1200, poupancaRafael);
+//		contaCorrenteVenilton.transferir(3000, contaCorrenteRodrigo);
 
 
 		contaCorrenteVenilton.imprimirExtrato();

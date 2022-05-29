@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 
 public abstract class Conta implements IConta {
 	
@@ -16,7 +17,6 @@ public abstract class Conta implements IConta {
 	}
 
 	public Conta() {
-
 	}
 
 	@Override
@@ -30,12 +30,25 @@ public abstract class Conta implements IConta {
 
 	@Override
 	public void depositar(double valor) {
-		if (valor > 0) {
+		if (valor > 0 && valor <= 10) {
 			saldo += valor;
+		} else if (valor > 10 && valor <=10000){
+			saldo += valor + (valor / 100) * 0.05;
+		} else if (valor > 10000){
+			saldo += valor + (valor / 100) * 0.02;
 		} else {
-			System.out.println("Valor deve ser superior a R$ 10,00");
+			System.out.println("Valor deve ser superior a R$ 0,00");
 		}
 	}
+
+//	@Override
+//	public void depositar(double valor) {
+//		if (valor > 0) {
+//			saldo += valor;
+//		} else {
+//			System.out.println("Valor deve ser superior a R$ 10,00");
+//		}
+//	}
 
 	@Override
 	public void transferir(double valor, IConta contaDestino) {
